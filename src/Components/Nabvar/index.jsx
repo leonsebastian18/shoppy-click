@@ -19,6 +19,7 @@ const Nabvar = () => {
                 <li>
                     <NavLink 
                         to='/'
+                        onClick={() => context.setSearchByCategory()}
                         className={({ isActive }) =>
                         isActive ? activeStyle : undefined
                     }>
@@ -27,16 +28,18 @@ const Nabvar = () => {
                 </li>
                 <li>
                     <NavLink 
-                        to='/clothes'
+                        to='/jewelery'
+                        onClick={() => context.setSearchByCategory('jewelery')}
                         className={({ isActive }) =>
                         isActive ? activeStyle : undefined
                     }>
-                        Clothes
+                        Jewelery
                     </NavLink>
                 </li>
                 <li>
                     <NavLink 
                         to='/electronics'
+                        onClick={() => context.setSearchByCategory('electronics')}
                         className={({ isActive }) =>
                         isActive ? activeStyle : undefined
                     }>
@@ -45,25 +48,28 @@ const Nabvar = () => {
                 </li>
                 <li>
                     <NavLink 
-                        to='/furnitures'
+                        to="/men's clothing"
+                        onClick={() => context.setSearchByCategory("men's clothing")}
                         className={({ isActive }) =>
                         isActive ? activeStyle : undefined
                     }>
-                        Furnitures
+                        Men's Clothing
                     </NavLink>
                 </li>
                 <li>
                     <NavLink 
-                        to='/toys'
+                        to="/women's clothing"
+                        onClick={() => context.setSearchByCategory("women's clothing")}
                         className={({ isActive }) =>
                         isActive ? activeStyle : undefined
                     }>
-                        Toys
+                        Women's Clothing
                     </NavLink>
                 </li>
                 <li>
                     <NavLink 
                         to='/others'
+                        onClick={() => context.setSearchByCategory('others')}
                         className={({ isActive }) =>
                         isActive ? activeStyle : undefined
                     }>
@@ -105,7 +111,7 @@ const Nabvar = () => {
                 </li>
                 <li className="flex items-center">
                     <ShoppingBagIcon className="h-6 w-6 text-black"></ShoppingBagIcon>
-                    <div>{context.count}</div>
+                    <div>{context.cartProducts.length}</div>
                 </li>
             </ul>
         </nav>
